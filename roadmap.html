@@ -290,12 +290,12 @@
           <a href="#phase1" class="phase-nav phase-1-nav">
             <div class="phase-num">1</div>
             <div class="phase-title">Stop the Bleeding</div>
-            <div class="phase-time">Weeks 1-4</div>
+            <div class="phase-time">Month 1</div>
           </a>
           <a href="#phase2" class="phase-nav phase-2-nav">
             <div class="phase-num">2</div>
             <div class="phase-title">Website Rebuild</div>
-            <div class="phase-time">Weeks 4-12</div>
+            <div class="phase-time">Months 2-3</div>
           </a>
           <a href="#phase3" class="phase-nav phase-3-nav">
             <div class="phase-num">3</div>
@@ -352,6 +352,13 @@
                 <span class="badge badge-success">Loyalty Building</span>
               </div>
             </div>
+            <div class="action-card">
+              <h4>Direct Mail Outreach</h4>
+              <p>"Brief a Friend" postcard packs and "Cover Your 6" referral cards. Physical touchpoints that supporters can share with their network.</p>
+              <div class="action-meta">
+                <span class="badge badge-success">Word of Mouth</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -392,8 +399,12 @@
               </div>
             </div>
             <div class="action-card">
-              <h4>YouTube Landing Page</h4>
-              <p>"You just watched this. Here's how to help." Dedicated page for video-referred visitors. Unlock 34,000 monthly YouTube visitors.</p>
+              <h4>YouTube Strategy</h4>
+              <ul style="margin: 0 0 0.5rem 1.25rem; color: var(--text-dark); font-size: 0.9rem;">
+                <li>Dedicated landing page for video visitors</li>
+                <li>Stronghold podcast/content series</li>
+                <li>Video-specific CTAs and info</li>
+              </ul>
               <div class="action-meta">
                 <span class="badge badge-success">Conversion Path</span>
               </div>
@@ -407,7 +418,7 @@
             </div>
             <div class="action-card">
               <h4>Social Proof</h4>
-              <p>"Join 10,300 people supporting rescue operations." Donors need to feel they are joining a movement.</p>
+              <p>Donors need to feel they are joining a movement. "Join 10,300 people supporting rescue operations."</p>
               <div class="action-meta">
                 <span class="badge badge-success">Conversion Lift</span>
               </div>
@@ -466,8 +477,13 @@
               </div>
             </div>
             <div class="action-card">
-              <h4>Monthly State of the Union</h4>
-              <p>Scripted monthly video update on what's happening. Feed through YouTube. Maintain engagement and provide shareable content.</p>
+              <h4>Communication Strategy</h4>
+              <p>Structured engagement across channels. For example:</p>
+              <ul style="margin: 0 0 0.5rem 1.25rem; color: var(--text-dark); font-size: 0.9rem;">
+                <li>Monthly "State of the Union" video updates</li>
+                <li>Stronghold podcast series</li>
+                <li>YouTube Live for high-value donors</li>
+              </ul>
               <div class="action-meta">
                 <span class="badge badge-success">Engagement</span>
               </div>
@@ -513,7 +529,7 @@
             </div>
             <div class="action-card">
               <h4>Major Donor Cultivation</h4>
-              <p>One-time donors give 11x more per transaction. Build a separate funnel for major gift prospects. Personal cultivation.</p>
+              <p>One-time donors give 11x more per transaction. Build a separate funnel for major donation prospects. Personal cultivation.</p>
               <div class="action-meta">
                 <span class="badge badge-success">Revenue Diversification</span>
               </div>
@@ -529,50 +545,27 @@
         
         <h2 class="text-center">Channel Priority Matrix</h2>
         <p class="text-center text-muted" style="max-width: 700px; margin: 0 auto 2rem;">
-          Where to invest limited resources for maximum impact.
+          Where to invest limited resources for maximum impact. Bubble size indicates relative priority.
         </p>
         
-        <div class="matrix-grid">
-          <div class="matrix-card">
-            <div class="matrix-header wins">Quick Wins</div>
-            <div class="matrix-body">
-              <div class="matrix-item">
-                <span>Referral Program</span>
-                <span class="badge badge-success">High Impact</span>
-              </div>
-              <div class="matrix-item">
-                <span>Email / Newsletter</span>
-                <span class="badge badge-success">High Impact</span>
-              </div>
-              <div class="matrix-item">
-                <span>Facebook Cross-Post</span>
-                <span class="badge badge-success">High Impact</span>
-              </div>
-              <div class="matrix-item">
-                <span>Instagram Optimization</span>
-                <span class="badge badge-success">High Impact</span>
-              </div>
+        <div style="background: var(--white); border-radius: 12px; padding: 2rem; border: 1px solid #e5e7eb;">
+          <canvas id="priorityMatrix" style="max-height: 450px;"></canvas>
+          <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 14px; height: 14px; border-radius: 50%; background: #10b981;"></div>
+              <span style="font-size: 0.85rem; color: var(--gray);">Quick Win</span>
             </div>
-          </div>
-          <div class="matrix-card">
-            <div class="matrix-header">Strategic Bets</div>
-            <div class="matrix-body">
-              <div class="matrix-item">
-                <span>Website Rebuild</span>
-                <span class="badge badge-danger">Critical</span>
-              </div>
-              <div class="matrix-item">
-                <span>YouTube Conversion Path</span>
-                <span class="badge badge-warning">High Value</span>
-              </div>
-              <div class="matrix-item">
-                <span>Podcast Guest Appearances</span>
-                <span class="badge badge-success">Proven</span>
-              </div>
-              <div class="matrix-item">
-                <span>SEO / Blog Content</span>
-                <span class="badge badge-warning">Long-Term</span>
-              </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 14px; height: 14px; border-radius: 50%; background: #0d2a45;"></div>
+              <span style="font-size: 0.85rem; color: var(--gray);">Strategic Bet</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 14px; height: 14px; border-radius: 50%; background: #f59e0b;"></div>
+              <span style="font-size: 0.85rem; color: var(--gray);">Fill Later</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 14px; height: 14px; border-radius: 50%; background: #ef4444;"></div>
+              <span style="font-size: 0.85rem; color: var(--gray);">Deprioritize</span>
             </div>
           </div>
         </div>
@@ -583,6 +576,128 @@
 
       </div>
     </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Channel Priority Matrix Bubble Chart
+      const matrixCtx = document.getElementById('priorityMatrix').getContext('2d');
+      new Chart(matrixCtx, {
+        type: 'bubble',
+        data: {
+          datasets: [
+            // Quick Wins (green) - low effort, high impact
+            {
+              label: 'Referral Program',
+              data: [{ x: 3.5, y: 9.0, r: 18 }],
+              backgroundColor: 'rgba(16, 185, 129, 0.7)',
+              borderColor: '#10b981'
+            },
+            {
+              label: 'Email/Newsletter',
+              data: [{ x: 3.5, y: 8.0, r: 22 }],
+              backgroundColor: 'rgba(16, 185, 129, 0.7)',
+              borderColor: '#10b981'
+            },
+            {
+              label: 'Instagram',
+              data: [{ x: 5.0, y: 8.5, r: 18 }],
+              backgroundColor: 'rgba(16, 185, 129, 0.7)',
+              borderColor: '#10b981'
+            },
+            {
+              label: 'Facebook',
+              data: [{ x: 4.5, y: 8.3, r: 14 }],
+              backgroundColor: 'rgba(16, 185, 129, 0.7)',
+              borderColor: '#10b981'
+            },
+            // Strategic Bets (navy) - higher effort, high impact
+            {
+              label: 'Website Rebuild',
+              data: [{ x: 8.2, y: 8.8, r: 28 }],
+              backgroundColor: 'rgba(13, 42, 69, 0.7)',
+              borderColor: '#0d2a45'
+            },
+            {
+              label: 'Podcasts (Guest)',
+              data: [{ x: 5.1, y: 9.5, r: 26 }],
+              backgroundColor: 'rgba(13, 42, 69, 0.7)',
+              borderColor: '#0d2a45'
+            },
+            {
+              label: 'YouTube',
+              data: [{ x: 7.0, y: 8.8, r: 22 }],
+              backgroundColor: 'rgba(13, 42, 69, 0.7)',
+              borderColor: '#0d2a45'
+            },
+            {
+              label: 'SEO/Blogs',
+              data: [{ x: 7.0, y: 8.0, r: 16 }],
+              backgroundColor: 'rgba(13, 42, 69, 0.7)',
+              borderColor: '#0d2a45'
+            },
+            {
+              label: 'Merch Store',
+              data: [{ x: 5.7, y: 7.5, r: 18 }],
+              backgroundColor: 'rgba(13, 42, 69, 0.7)',
+              borderColor: '#0d2a45'
+            },
+            // Fill Later (amber)
+            {
+              label: 'Google Ad Grant',
+              data: [{ x: 6.0, y: 6.8, r: 20 }],
+              backgroundColor: 'rgba(245, 158, 11, 0.7)',
+              borderColor: '#f59e0b'
+            },
+            {
+              label: 'LinkedIn',
+              data: [{ x: 4.5, y: 5.5, r: 10 }],
+              backgroundColor: 'rgba(245, 158, 11, 0.7)',
+              borderColor: '#f59e0b'
+            },
+            // Deprioritize (red)
+            {
+              label: 'TikTok',
+              data: [{ x: 7.5, y: 4.0, r: 12 }],
+              backgroundColor: 'rgba(239, 68, 68, 0.7)',
+              borderColor: '#ef4444'
+            },
+            {
+              label: 'X/Twitter',
+              data: [{ x: 6.0, y: 3.5, r: 8 }],
+              backgroundColor: 'rgba(239, 68, 68, 0.7)',
+              borderColor: '#ef4444'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: 'Effort Required', color: '#0d2a45', font: { weight: 'bold' } },
+              min: 2,
+              max: 10,
+              grid: { color: '#e5e7eb' }
+            },
+            y: {
+              title: { display: true, text: 'Potential Impact', color: '#0d2a45', font: { weight: 'bold' } },
+              min: 2,
+              max: 10,
+              grid: { color: '#e5e7eb' }
+            }
+          }
+        }
+      });
+    </script>
 
   </div>
 

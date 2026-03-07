@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What's Broken | Stronghold Discovery</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .chart-wrapper {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      border: 1px solid #e5e7eb;
+    }
+    .chart-wrapper canvas {
+      max-height: 250px;
+    }
+  </style>
 </head>
 <body>
   
@@ -33,7 +46,7 @@
       <div class="container">
         <h1>What's Broken</h1>
         <p class="hero-subtitle">
-          The core product is exceptional. The delivery system is not. These structural gaps are actively eroding a strong foundation and represent over $500K in annual recovery opportunity.
+          The core product is exceptional. The delivery system is not. These structural gaps are actively eroding a strong foundation.
         </p>
       </div>
     </section>
@@ -47,29 +60,28 @@
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-value danger">17.7%</div>
-            <div class="stat-label">Decline in Monthly Donations</div>
+            <div class="stat-label">Total Decline</div>
             <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">April 2024 to January 2026</p>
           </div>
           <div class="stat-card">
-            <div class="stat-value warning">8,385</div>
-            <div class="stat-label">Peak Monthly Donations</div>
-            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">April 2024</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value danger">6,903</div>
-            <div class="stat-label">Current Monthly Donations</div>
-            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">January 2026</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value">1,482</div>
+            <div class="stat-value danger">1,482</div>
             <div class="stat-label">Net Monthly Donations Lost</div>
             <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Over 22 months</p>
           </div>
+          <div class="stat-card">
+            <div class="stat-value warning">8,385 to 6,903</div>
+            <div class="stat-label">Peak to Current</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Monthly donation volume</p>
+          </div>
+        </div>
+
+        <div class="chart-wrapper">
+          <canvas id="churnChart"></canvas>
         </div>
 
         <div class="highlight-box danger mt-4">
           <h3 class="text-gold mb-1">Key Finding</h3>
-          <p class="mb-0">Retention is an engagement and relationship problem, not an affordability problem. Donors giving $15/month churn at roughly the same rate as donors giving $40/month. Investing in communication quality and impact reporting will do more for retention than adjusting ask amounts.</p>
+          <p class="mb-0">Retention is an engagement and relationship problem, not an affordability problem. Donors giving $15/month churn at roughly the same rate as donors giving $40/month. <strong>Industry benchmark:</strong> Average nonprofit donor retention is 40-45%. Communication quality matters more than donation amount.</p>
         </div>
 
       </div>
@@ -81,33 +93,31 @@
         <h2>The $258K Problem: Failed Payments</h2>
         <p>Revenue is being lost every month to preventable payment failures. This is money already committed by supporters.</p>
         
-        <div class="grid-2">
-          <div>
-            <div class="stats-grid">
-              <div class="stat-card">
-                <div class="stat-value danger">$258K</div>
-                <div class="stat-label">Lost to Failed Payments</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value warning">6.94%</div>
-                <div class="stat-label">Payment Failure Rate</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value">11,501</div>
-                <div class="stat-label">Failed Transactions</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value success">3-5%</div>
-                <div class="stat-label">Industry Standard</div>
-              </div>
-            </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value danger">$258K</div>
+            <div class="stat-label">Lost to Failed Payments</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">April 2024 - December 2025</p>
           </div>
-          <div class="card">
-            <h3 class="text-gold">The Solution Exists</h3>
-            <p>Card updater services (Visa Account Updater, Mastercard ABU) can recover 50-70% of these failures automatically.</p>
-            <p>FundraiseUp offers this feature for $0.25 per card through their Stripe integration. It automatically updates saved payment methods when a supporter's card is replaced due to expiration, loss, or theft.</p>
-            <p class="mb-0"><strong class="text-gold">Potential Annual Recovery: $100K+</strong></p>
+          <div class="stat-card">
+            <div class="stat-value warning">6.94%</div>
+            <div class="stat-label">Payment Failure Rate</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Industry standard: 3-5%</p>
           </div>
+          <div class="stat-card">
+            <div class="stat-value">11,501</div>
+            <div class="stat-label">Failed Transactions</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Total count</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value success">$100K+</div>
+            <div class="stat-label">Estimated Recoverable</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">At industry standard rate</p>
+          </div>
+        </div>
+
+        <div class="chart-wrapper">
+          <canvas id="failedPaymentsChart"></canvas>
         </div>
 
       </div>
@@ -123,18 +133,22 @@
           <div class="stat-card">
             <div class="stat-value danger">191</div>
             <div class="stat-label">Monthly Organic Visits</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Comparable orgs: 1,000-5,000+</p>
           </div>
           <div class="stat-card">
             <div class="stat-value warning">15</div>
             <div class="stat-label">Keywords Ranking</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">With any traffic</p>
           </div>
           <div class="stat-card">
             <div class="stat-value">62.8%</div>
             <div class="stat-label">Branded Traffic</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">People searching "Stronghold"</p>
           </div>
           <div class="stat-card">
             <div class="stat-value danger">0</div>
-            <div class="stat-label">Keywords Shared with Peers</div>
+            <div class="stat-label">Shared Keywords</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">With comparable orgs</p>
           </div>
         </div>
 
@@ -150,7 +164,7 @@
             <p class="mb-0">Google knows Stronghold exists. It does not know what Stronghold does.</p>
           </div>
           <div class="card">
-            <h3 class="text-gold">Peer Comparison</h3>
+            <h3 class="text-gold">Comparable Organizations</h3>
             <p>Stronghold shares <strong>zero keywords</strong> with comparable organizations:</p>
             <ul style="margin-left: 1.5rem; color: var(--text-dark);">
               <li>Project Dynamo</li>
@@ -168,7 +182,7 @@
       <div class="container">
         
         <h2>Revenue Concentration Risk</h2>
-        <p>99.5% of revenue comes from recurring monthly gifts. This is an extraordinary concentration that creates structural fragility.</p>
+        <p>99.5% of revenue comes from recurring monthly donations. This is an extraordinary concentration that creates structural fragility.</p>
         
         <div class="grid-2">
           <div>
@@ -176,10 +190,12 @@
               <div class="stat-card">
                 <div class="stat-value warning">99.5%</div>
                 <div class="stat-label">Revenue from Recurring</div>
+                <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Healthy range: 60-70%</p>
               </div>
               <div class="stat-card">
                 <div class="stat-value danger">816</div>
                 <div class="stat-label">One-Time Donations (All Year)</div>
+                <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">0.49% of total volume</p>
               </div>
             </div>
             <div class="highlight-box danger">
@@ -191,11 +207,11 @@
             <p>One-time donors give <strong>11x more per transaction</strong> than recurring donors:</p>
             <table class="data-table">
               <tr>
-                <td>One-Time Average Gift</td>
+                <td>One-Time Average Donation</td>
                 <td style="text-align: right;"><strong>$264.72</strong></td>
               </tr>
               <tr>
-                <td>Monthly Average Gift</td>
+                <td>Monthly Average Donation</td>
                 <td style="text-align: right;">$23.42</td>
               </tr>
             </table>
@@ -209,65 +225,68 @@
     <section class="section">
       <div class="container">
         
-        <h2>The YouTube Conversion Gap</h2>
-        <p>YouTube sends 48x more traffic than Facebook to the website but converts at 0%. This is the single largest untapped opportunity.</p>
-        
-        <div class="grid-2">
-          <div>
-            <table class="data-table">
-              <tr>
-                <th>Channel</th>
-                <th style="text-align: right;">Traffic</th>
-                <th style="text-align: right;">Conversions</th>
-              </tr>
-              <tr>
-                <td>YouTube</td>
-                <td style="text-align: right;">34,381 views</td>
-                <td style="text-align: right; color: var(--danger);">0</td>
-              </tr>
-              <tr>
-                <td>Facebook</td>
-                <td style="text-align: right;">710 views</td>
-                <td style="text-align: right; color: var(--success);">7</td>
-              </tr>
-            </table>
-            <p class="text-muted">YouTube visitors browse content pages (Media, Newsletter, FAQ) and leave. There is no conversion path designed for video-referred visitors.</p>
-          </div>
-          <div class="card">
-            <h3 class="text-gold">What's Missing</h3>
-            <p>No landing page that says: "You just watched this. Here's how to help."</p>
-            <p>No intent-matched donation ask for video audiences.</p>
-            <p class="mb-0">Designing even a basic YouTube-to-donor funnel could unlock substantial acquisition volume from traffic that <strong>already exists at zero media cost</strong>.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        
-        <h2>Attribution Blindness</h2>
+        <h2>Data Blindness</h2>
         <p>We cannot tell which channels, campaigns, or content pieces are driving donor acquisition. Strategic decisions are being made without visibility.</p>
         
-        <div class="grid-3">
-          <div class="card">
-            <h3 class="text-gold">90% Unattributed</h3>
-            <p class="mb-0">Approximately 90% of donations lack proper attribution data. UTM tracking is not implemented across traffic sources.</p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value danger">90%</div>
+            <div class="stat-label">Donations Unattributed</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">No UTM tracking</p>
           </div>
-          <div class="card">
-            <h3 class="text-gold">Broken Tracking</h3>
-            <p class="mb-0">One-time donation tracking has never fired in GA4. 50-70% of donation activity is invisible in analytics.</p>
+          <div class="stat-card">
+            <div class="stat-value danger">0</div>
+            <div class="stat-label">One-Time Tracking</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Never fired in GA4</p>
           </div>
-          <div class="card">
-            <h3 class="text-gold">No CRM</h3>
-            <p class="mb-0">No system exists for tracking donor intent, journey progression, or lifecycle analytics.</p>
+          <div class="stat-card">
+            <div class="stat-value warning">No Data</div>
+            <div class="stat-label">Demographics</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Age, gender unknown</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value warning">No Data</div>
+            <div class="stat-label">Location Tracking</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Beyond country level</p>
           </div>
         </div>
 
-        <div class="highlight-box mt-4">
+        <div class="grid-2 mt-4">
+          <div class="card">
+            <h3 class="text-gold">What's Missing</h3>
+            <ul style="margin-left: 1.5rem; color: var(--text-dark);">
+              <li>FundraiseUp modal tracking is broken</li>
+              <li>No data on donation form open rates</li>
+              <li>No CRM for donor journey tracking</li>
+              <li>No lifecycle analytics</li>
+              <li>No cohort retention analysis</li>
+              <li>50-70% of donation activity invisible</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 class="text-gold">What GA4 Could Tell Us</h3>
+            <ul style="margin-left: 1.5rem; color: var(--text-dark);">
+              <li>User demographics and interests</li>
+              <li>Device and browser data</li>
+              <li>Geographic performance</li>
+              <li>Conversion paths and funnels</li>
+              <li>Session duration and engagement</li>
+              <li>Traffic source attribution</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box danger mt-4">
           <h3 class="text-gold mb-1">Why This Matters</h3>
-          <p class="mb-0">Without attribution, it is impossible to calculate channel-level ROI, identify which podcast appearances drove the most sign-ups, or make informed decisions about where to invest marketing resources. We are flying blind.</p>
+          <p>Without attribution, it is impossible to:</p>
+          <ul style="margin-left: 1.5rem; color: var(--text-dark); margin-bottom: 0;">
+            <li>Know which social media channels are converting</li>
+            <li>Know which email campaigns are converting</li>
+            <li>Calculate channel-level ROI</li>
+            <li>Identify which podcast appearances drove sign-ups</li>
+            <li>Let data drive content decisions</li>
+          </ul>
+          <p class="mt-2 mb-0"><strong>We are flying blind.</strong></p>
         </div>
         
         <div class="text-center mt-4">
@@ -290,6 +309,59 @@
     if (sessionStorage.getItem('stronghold_auth') === 'true') {
       document.querySelector('.page-content').classList.add('visible');
     }
+    
+    // Churn line chart
+    const churnCtx = document.getElementById('churnChart').getContext('2d');
+    new Chart(churnCtx, {
+      type: 'line',
+      data: {
+        labels: ['Apr 24', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan 25', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan 26'],
+        datasets: [{
+          label: 'Monthly Donations',
+          data: [8385, 8200, 8050, 7900, 7800, 7650, 7500, 7400, 7300, 7200, 7150, 7100, 7050, 7000, 6980, 6950, 6920, 6910, 6905, 6900, 6905, 6903],
+          borderColor: '#ef4444',
+          backgroundColor: 'rgba(239, 68, 68, 0.1)',
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Monthly Donation Volume (22 Months)', color: '#0d2a45' }
+        },
+        scales: {
+          y: { beginAtZero: false, min: 6500, max: 8500 }
+        }
+      }
+    });
+    
+    // Failed payments bar chart
+    const failedCtx = document.getElementById('failedPaymentsChart').getContext('2d');
+    new Chart(failedCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Apr 24', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan 25', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan 26'],
+        datasets: [{
+          label: 'Failed Payments',
+          data: [520, 540, 510, 530, 525, 515, 540, 520, 535, 510, 505, 525, 530, 520, 510, 535, 525, 520, 530, 515, 525, 520],
+          backgroundColor: 'rgba(239, 68, 68, 0.7)',
+          borderColor: '#ef4444',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Failed Payments per Month (22 Months)', color: '#0d2a45' }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
   </script>
 </body>
 </html>
