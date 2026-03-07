@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Stronghold Rescue & Relief - a veteran-led nonprofit protecting persecuted families through emergency medicine and humanitarian relief.">
+    <title>About Us | Stronghold Rescue & Relief</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'stronghold': {
+                            'navy': '#1a2744',
+                            'gold': '#c9a227',
+                            'red': '#8b2635',
+                            'tan': '#d4c4a8',
+                            'cream': '#f5f1e8'
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-stronghold-cream">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-stronghold-navy/95 backdrop-blur-sm z-40 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="../index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-stronghold-gold rounded-full flex items-center justify-center">
+                        <span class="text-stronghold-navy font-bold text-xl">S</span>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="text-white font-bold text-lg">STRONGHOLD</span>
+                        <span class="text-stronghold-tan text-sm block -mt-1">Rescue & Relief</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="our-work.html" class="text-white hover:text-stronghold-gold transition">Our Work</a>
+                    <a href="about.html" class="text-stronghold-gold font-semibold">About</a>
+                    <a href="impact.html" class="text-white hover:text-stronghold-gold transition">Impact</a>
+                    <a href="media.html" class="text-white hover:text-stronghold-gold transition">Media</a>
+                    <a href="contact.html" class="text-white hover:text-stronghold-gold transition">Contact</a>
+                </div>
+                <a href="../index.html#donate" class="bg-stronghold-gold hover:bg-yellow-500 text-stronghold-navy font-bold py-3 px-6 rounded-lg transition">
+                    Donate Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-20 bg-stronghold-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="font-display text-5xl md:text-6xl mb-6">About Stronghold</h1>
+            <p class="text-xl text-stronghold-tan max-w-3xl mx-auto">
+                A veteran-led nonprofit on a mission to protect the most vulnerable people in the world's most dangerous places.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-stronghold-cream rounded-2xl p-8 md:p-12">
+                    <h2 class="font-display text-3xl text-stronghold-navy mb-6">Our Mission</h2>
+                    <p class="text-xl text-gray-700">
+                        We send small teams of veterans into conflict zones to protect and care for persecuted communities — providing emergency medicine, rescuing targeted families, and delivering humanitarian relief.
+                    </p>
+                </div>
+                <div class="bg-stronghold-navy rounded-2xl p-8 md:p-12 text-white">
+                    <h2 class="font-display text-3xl mb-6">Our Vision</h2>
+                    <p class="text-xl text-stronghold-tan">
+                        A world where no family faces persecution alone. We envision communities equipped, trained, and empowered to protect themselves — with Stronghold by their side when they need us most.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Origin Story -->
+    <section class="py-20 bg-stronghold-cream">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl text-stronghold-navy mb-4">How It Started</h2>
+            </div>
+            <div class="prose prose-lg max-w-none">
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                    Stronghold Rescue & Relief was founded by veterans who witnessed firsthand the atrocities faced by civilian populations in conflict zones. After years of military service, they couldn't stand by while families were slaughtered, enslaved, and persecuted.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                    Starting with nothing but their training and a commitment to help, these veterans began conducting rescue operations and providing medical care in some of the world's most dangerous places. What started as a small team has grown into a full-time operation serving multiple countries.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Today, Stronghold's staff is comprised entirely of combat veterans — most from the special operations community including U.S. Navy SEALs and U.S. Army Ranger Regiment. Their unique skills and experience allow them to operate in environments too dangerous for traditional humanitarian organizations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charity With Dignity -->
+    <section class="py-20 bg-stronghold-red text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-stronghold-gold font-semibold uppercase tracking-wider">Our Philosophy</span>
+                    <h2 class="font-display text-4xl md:text-5xl mt-4 mb-6">Charity With Dignity</h2>
+                    <p class="text-xl text-white/90 mb-6">
+                        We believe the best way to create lasting change is to empower communities to help themselves. That's why we don't just deliver aid — we train and enable local teams to conduct their own rescue and relief operations.
+                    </p>
+                    <p class="text-xl text-white/90">
+                        This approach means your support goes <strong>10× further</strong>. Instead of creating dependency, we're building capacity that lasts long after our teams leave.
+                    </p>
+                </div>
+                <div class="bg-white/10 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6">What This Means in Practice</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <svg class="w-6 h-6 text-stronghold-gold flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Local medics trained to provide trauma care</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-6 h-6 text-stronghold-gold flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Communities equipped with early warning systems</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-6 h-6 text-stronghold-gold flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Sustainable infrastructure built to last</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-6 h-6 text-stronghold-gold flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Local partners who can train others</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl text-stronghold-navy mb-4">Our Values</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-stronghold-red/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-stronghold-red" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-stronghold-navy mb-3">Compassion</h3>
+                    <p class="text-gray-600">We see every person as worthy of protection and dignity, regardless of their circumstances or background.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-stronghold-navy/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-stronghold-navy" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-stronghold-navy mb-3">Courage</h3>
+                    <p class="text-gray-600">We go where others can't or won't, facing danger to protect those who cannot protect themselves.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-stronghold-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-stronghold-gold" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-stronghold-navy mb-3">Empowerment</h3>
+                    <p class="text-gray-600">We believe in building capacity, not dependency — training others to carry the mission forward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency -->
+    <section class="py-20 bg-stronghold-cream">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-display text-4xl text-stronghold-navy mb-6">Committed to Transparency</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                We believe donors deserve to know exactly how their support is being used. That's why we make our financial records publicly available.
+            </p>
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <h3 class="font-bold text-stronghold-navy text-xl mb-6">Form 990 Documents</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#" class="bg-stronghold-navy text-white px-6 py-3 rounded-lg hover:bg-stronghold-red transition">2024</a>
+                    <a href="#" class="bg-stronghold-navy text-white px-6 py-3 rounded-lg hover:bg-stronghold-red transition">2023</a>
+                    <a href="#" class="bg-stronghold-navy text-white px-6 py-3 rounded-lg hover:bg-stronghold-red transition">2022</a>
+                    <a href="#" class="bg-stronghold-navy text-white px-6 py-3 rounded-lg hover:bg-stronghold-red transition">2021</a>
+                    <a href="#" class="bg-stronghold-navy text-white px-6 py-3 rounded-lg hover:bg-stronghold-red transition">2020</a>
+                    <a href="#" class="bg-stronghold-navy text-white px-6 py-3 rounded-lg hover:bg-stronghold-red transition">2019</a>
+                </div>
+                <p class="mt-6 text-gray-500 text-sm">
+                    Stronghold Rescue & Relief is a 501(c)(3) nonprofit organization. EIN: 83-2711117
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-stronghold-navy text-white text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="font-display text-4xl md:text-5xl mb-6">Join the Stronghold Community</h2>
+            <p class="text-xl text-stronghold-tan mb-8">
+                For just $0.50/day, you can help protect families in the world's most dangerous places.
+            </p>
+            <a href="../index.html#donate" class="inline-block bg-stronghold-gold hover:bg-yellow-500 text-stronghold-navy font-bold py-4 px-10 rounded-lg text-xl transition transform hover:scale-105 shadow-lg">
+                Become a Supporter Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stronghold-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-stronghold-tan">&copy; 2026 Stronghold Rescue & Relief. 501(c)(3) Nonprofit | EIN: 83-2711117</p>
+        </div>
+    </footer>
+</body>
+</html>

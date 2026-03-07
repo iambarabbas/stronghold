@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support Stronghold Rescue & Relief. Your $0.50/day sends veteran teams to save lives in conflict zones.">
+    <title>Donate | Stronghold Rescue & Relief</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'stronghold': {
+                            'navy': '#1a2744',
+                            'gold': '#c9a227',
+                            'red': '#8b2635',
+                            'tan': '#d4c4a8',
+                            'cream': '#f5f1e8'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- 
+    =====================================================
+    FUNDRAISE UP INSTALLATION CODE
+    =====================================================
+    This script MUST be present on any page using Fundraise Up elements.
+    Replace XXXX with your actual Fundraise Up organization code.
+    Get this from: Dashboard > Settings > Installation
+    -->
+    <script>(function(w,d,s,n,a){if(!w[n]){var l='call,currentTime,currentTimestamp,dismiss,floor,init,open,renderButton,renderComponent,setRecurringIntent,setRegion,toggle,useAmounts'.split(','),i=function(n){return function(){var c=[n].concat([].slice.call(arguments));w[f].push(c)}},f=n+'Proxy';w[f]=[];for(var j=0;j<l.length;j++){w[n]=w[n]||{},w[n][l[j]]=i(l[j])}w[n].s=1*new Date;var k=d.createElement(s);k.async=!0;k.src='https://cdn.fundraiseup.com/widget/'+a;d.head.appendChild(k)}})(window,document,'script','FundraiseUp','XXXX.js');</script>
+    <!-- Replace XXXX with your org code (e.g., ABCD1234) -->
+
+    <style>
+        .hero-bg {
+            background: linear-gradient(to right, rgba(26, 39, 68, 0.97), rgba(26, 39, 68, 0.85)), 
+                        url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1920') center/cover;
+        }
+        
+        /* Fundraise Up form styling overrides (optional) */
+        .donation-section {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+<body class="font-sans bg-stronghold-cream">
+
+    <!-- Minimal Header -->
+    <header class="bg-stronghold-navy py-4">
+        <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-stronghold-gold rounded-full flex items-center justify-center">
+                    <span class="text-stronghold-navy font-bold text-lg">S</span>
+                </div>
+                <div>
+                    <span class="text-white font-bold">STRONGHOLD</span>
+                    <span class="text-stronghold-tan text-xs block -mt-1">Rescue & Relief</span>
+                </div>
+            </a>
+            <a href="tel:2623029419" class="text-stronghold-tan hover:text-white text-sm hidden sm:block">
+                (262) 302-9419
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero + Embedded Form Section -->
+    <section class="hero-bg min-h-screen">
+        <div class="max-w-6xl mx-auto px-4 py-12 lg:py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                
+                <!-- Left Column: Message -->
+                <div class="text-white pt-8 lg:pt-16">
+                    <p class="text-stronghold-gold font-semibold uppercase tracking-wider text-sm mb-4">
+                        Charity With Dignity
+                    </p>
+                    <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+                        Your 50¢ a Day<br>
+                        <span class="text-stronghold-gold">Saves Lives</span>
+                    </h1>
+                    <p class="text-xl text-stronghold-tan mb-8 leading-relaxed">
+                        We send small teams of combat veterans into the world's most dangerous places to rescue families, provide emergency medicine, and protect the persecuted.
+                    </p>
+                    
+                    <!-- Trust Signals -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-stronghold-gold rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-stronghold-navy" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-white">100% Tax-Deductible (501c3)</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-stronghold-gold rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-stronghold-navy" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-white">Your support goes 10X further with local teams</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-stronghold-gold rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-stronghold-navy" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-white">Free Stronghold T-shirt for monthly supporters</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Proof -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-3xl font-bold text-stronghold-gold">2,847</p>
+                                <p class="text-sm text-stronghold-tan">Lives Saved</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-stronghold-gold">365</p>
+                                <p class="text-sm text-stronghold-tan">Days Active</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-stronghold-gold">12</p>
+                                <p class="text-sm text-stronghold-tan">Countries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: EMBEDDED Donation Form -->
+                <div class="donation-section p-8 lg:p-10">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-bold text-stronghold-navy mb-2">Make a Donation</h2>
+                        <p class="text-gray-600">Join our community of monthly supporters</p>
+                    </div>
+
+                    <!-- 
+                    =====================================================
+                    FUNDRAISE UP EMBEDDED DONATION FORM - MOCKUP
+                    =====================================================
+                    This is a visual mockup of what the embedded form looks like.
+                    Replace this entire div with the actual Fundraise Up embed code.
+                    
+                    To get the real code:
+                    1. Go to Fundraise Up Dashboard > Elements
+                    2. Click "New element" > "Donation Form"
+                    3. Choose your campaign
+                    4. Customize appearance (amounts, colors, etc.)
+                    5. Copy the generated code and replace this mockup
+                    -->
+                    
+                    <div id="fundraise-form-mockup">
+                        <!-- Frequency Toggle -->
+                        <div class="flex bg-gray-100 rounded-lg p-1 mb-6">
+                            <button class="flex-1 py-2 px-4 rounded-md text-sm font-medium text-gray-500 hover:text-gray-700 transition">
+                                One-time
+                            </button>
+                            <button class="flex-1 py-2 px-4 rounded-md text-sm font-medium bg-white text-stronghold-navy shadow-sm">
+                                Monthly
+                            </button>
+                        </div>
+
+                        <!-- Amount Selection -->
+                        <div class="grid grid-cols-3 gap-3 mb-6">
+                            <button class="py-3 px-4 border-2 border-gray-200 rounded-lg text-lg font-semibold text-gray-700 hover:border-stronghold-gold hover:bg-stronghold-gold/5 transition">
+                                $15
+                            </button>
+                            <button class="py-3 px-4 border-2 border-stronghold-gold bg-stronghold-gold/10 rounded-lg text-lg font-semibold text-stronghold-navy">
+                                $30
+                            </button>
+                            <button class="py-3 px-4 border-2 border-gray-200 rounded-lg text-lg font-semibold text-gray-700 hover:border-stronghold-gold hover:bg-stronghold-gold/5 transition">
+                                $50
+                            </button>
+                            <button class="py-3 px-4 border-2 border-gray-200 rounded-lg text-lg font-semibold text-gray-700 hover:border-stronghold-gold hover:bg-stronghold-gold/5 transition">
+                                $100
+                            </button>
+                            <button class="py-3 px-4 border-2 border-gray-200 rounded-lg text-lg font-semibold text-gray-700 hover:border-stronghold-gold hover:bg-stronghold-gold/5 transition">
+                                $250
+                            </button>
+                            <button class="py-3 px-4 border-2 border-gray-200 rounded-lg text-lg font-semibold text-gray-700 hover:border-stronghold-gold hover:bg-stronghold-gold/5 transition">
+                                Other
+                            </button>
+                        </div>
+
+                        <!-- Impact Message -->
+                        <div class="bg-stronghold-gold/10 border border-stronghold-gold/30 rounded-lg p-3 mb-6 text-center">
+                            <p class="text-sm text-stronghold-navy">
+                                <span class="font-semibold">$30/month</span> provides emergency medical supplies for 3 trauma kits
+                            </p>
+                        </div>
+
+                        <!-- Name Fields -->
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">First name</label>
+                                <input type="text" placeholder="First name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-stronghold-gold focus:border-stronghold-gold outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Last name</label>
+                                <input type="text" placeholder="Last name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-stronghold-gold focus:border-stronghold-gold outline-none transition">
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" placeholder="your@email.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-stronghold-gold focus:border-stronghold-gold outline-none transition">
+                        </div>
+
+                        <!-- Payment Methods -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Payment method</label>
+                            <div class="grid grid-cols-4 gap-2 mb-4">
+                                <button class="py-3 px-2 border-2 border-stronghold-navy bg-stronghold-navy/5 rounded-lg flex items-center justify-center">
+                                    <svg class="h-6" viewBox="0 0 24 24" fill="currentColor">
+                                        <rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M2 10h20" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </button>
+                                <button class="py-3 px-2 border-2 border-gray-200 rounded-lg flex items-center justify-center hover:border-gray-300 transition">
+                                    <svg class="h-5" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M17.5 12a5.5 5.5 0 11-11 0 5.5 5.5 0 0111 0z"/>
+                                        <text x="12" y="14" font-size="6" text-anchor="middle" fill="white" font-weight="bold">Pay</text>
+                                    </svg>
+                                </button>
+                                <button class="py-3 px-2 border-2 border-gray-200 rounded-lg flex items-center justify-center hover:border-gray-300 transition">
+                                    <span class="text-xs font-bold text-gray-600">G Pay</span>
+                                </button>
+                                <button class="py-3 px-2 border-2 border-gray-200 rounded-lg flex items-center justify-center hover:border-gray-300 transition">
+                                    <span class="text-xs font-bold text-blue-600">PayPal</span>
+                                </button>
+                            </div>
+
+                            <!-- Card Input -->
+                            <div class="border border-gray-300 rounded-lg p-4">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="flex-1">
+                                        <input type="text" placeholder="Card number" class="w-full outline-none text-gray-700 placeholder-gray-400">
+                                    </div>
+                                    <div class="flex space-x-1">
+                                        <div class="w-8 h-5 bg-blue-600 rounded text-white text-xs flex items-center justify-center font-bold">VISA</div>
+                                        <div class="w-8 h-5 bg-red-500 rounded text-white text-xs flex items-center justify-center">MC</div>
+                                        <div class="w-8 h-5 bg-blue-400 rounded text-white text-xs flex items-center justify-center">AMEX</div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <input type="text" placeholder="MM / YY" class="w-24 outline-none text-gray-700 placeholder-gray-400">
+                                    <input type="text" placeholder="CVC" class="w-16 outline-none text-gray-700 placeholder-gray-400">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donate Button -->
+                        <button class="w-full bg-stronghold-gold hover:bg-yellow-500 text-stronghold-navy font-bold py-4 px-6 rounded-lg text-lg transition transform hover:scale-[1.02] shadow-lg">
+                            Donate $30/month
+                        </button>
+
+                        <!-- T-shirt bonus -->
+                        <p class="text-center text-sm text-gray-500 mt-4">
+                            🎁 Monthly donors receive a free Stronghold T-shirt!
+                        </p>
+                    </div>
+                    <!-- END MOCKUP -->
+
+                    <!-- Security Badge -->
+                    <div class="mt-6 pt-6 border-t border-gray-200 flex items-center justify-center space-x-2 text-sm text-gray-500">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Secure donation powered by Fundraise Up</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do (Below the fold) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-stronghold-navy text-center mb-12">How Your Support Saves Lives</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Emergency Medicine -->
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-stronghold-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-stronghold-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-stronghold-navy mb-2">Emergency Medicine</h3>
+                    <p class="text-gray-600">Frontline trauma care and medical evacuations using our boat ambulance in Burma.</p>
+                </div>
+
+                <!-- Refugee Protection -->
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-stronghold-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-stronghold-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-stronghold-navy mb-2">Refugee Protection</h3>
+                    <p class="text-gray-600">Covert extractions of families targeted by the Taliban, cartels, and oppressive regimes.</p>
+                </div>
+
+                <!-- Humanitarian Relief -->
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-stronghold-navy/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-stronghold-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-stronghold-navy mb-2">Humanitarian Relief</h3>
+                    <p class="text-gray-600">Food, water, shelter, and long-term development for refugee camps and remote villages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Credibility -->
+    <section class="py-16 bg-stronghold-navy text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="text-stronghold-gold font-semibold uppercase tracking-wider text-sm mb-4">Our Team</p>
+            <h2 class="text-3xl font-bold mb-6">Combat Veterans. Special Operations.</h2>
+            <p class="text-xl text-stronghold-tan leading-relaxed">
+                All full-time rescue and relief staff are combat veterans from elite units — 
+                U.S. Navy SEALs, Army Rangers, and Special Operations. They've dedicated their lives 
+                to protecting the innocent, and now they're doing it where it matters most.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stronghold-navy py-12 border-t border-stronghold-navy/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-stronghold-tan text-sm">
+                        Stronghold Rescue & Relief is a 501(c)(3) non-profit.<br>
+                        EIN: 83-2711117 | All donations are tax-deductible.
+                    </p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://strongholdrescue.org/faq" class="text-stronghold-tan hover:text-white text-sm">FAQ</a>
+                    <a href="https://strongholdrescue.org/contact" class="text-stronghold-tan hover:text-white text-sm">Contact</a>
+                    <a href="https://strongholdrescue.org" class="text-stronghold-tan hover:text-white text-sm">Main Site</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10 text-center">
+                <p class="text-stronghold-tan/60 text-sm">© 2026 Stronghold Rescue & Relief. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
