@@ -74,6 +74,22 @@
       color: rgba(255,255,255,0.7);
     }
     
+    a.phase-nav {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    /* Phase nav colors on hover */
+    .phase-1-nav:hover { border-color: #3b82f6; }
+    .phase-2-nav:hover { border-color: #8b5cf6; }
+    .phase-3-nav:hover { border-color: #10b981; }
+    .phase-4-nav:hover { border-color: #f59e0b; }
+    
+    .phase-1-nav:hover .phase-num { background: #3b82f6; }
+    .phase-2-nav:hover .phase-num { background: #8b5cf6; }
+    .phase-3-nav:hover .phase-num { background: #10b981; }
+    .phase-4-nav:hover .phase-num { background: #f59e0b; }
+    
     /* Connector line between phases */
     .phase-nav:not(:last-child)::after {
       content: '';
@@ -99,7 +115,32 @@
       margin-bottom: 2rem;
       border: 1px solid #e5e7eb;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      scroll-margin-top: 100px;
     }
+    
+    /* Phase background colors - very muted */
+    .phase-section.phase-1 {
+      background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+      border-color: #dbeafe;
+    }
+    .phase-section.phase-2 {
+      background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%);
+      border-color: #e9d5ff;
+    }
+    .phase-section.phase-3 {
+      background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+      border-color: #d1fae5;
+    }
+    .phase-section.phase-4 {
+      background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+      border-color: #fef3c7;
+    }
+    
+    /* Phase number colors */
+    .phase-1 .phase-number { background: #3b82f6; }
+    .phase-2 .phase-number { background: #8b5cf6; }
+    .phase-3 .phase-number { background: #10b981; }
+    .phase-4 .phase-number { background: #f59e0b; }
     
     .phase-header {
       display: flex;
@@ -264,30 +305,30 @@
         
         <!-- Phase Navigation -->
         <div class="roadmap-header">
-          <div class="phase-nav">
+          <a href="#phase1" class="phase-nav phase-1-nav">
             <div class="phase-num">1</div>
             <div class="phase-title">Stop the Bleeding</div>
             <div class="phase-time">Weeks 1-4</div>
-          </div>
-          <div class="phase-nav">
+          </a>
+          <a href="#phase2" class="phase-nav phase-2-nav">
             <div class="phase-num">2</div>
             <div class="phase-title">Website Rebuild</div>
             <div class="phase-time">Weeks 4-12</div>
-          </div>
-          <div class="phase-nav">
+          </a>
+          <a href="#phase3" class="phase-nav phase-3-nav">
             <div class="phase-num">3</div>
             <div class="phase-title">Growth Channels</div>
             <div class="phase-time">Months 3-6</div>
-          </div>
-          <div class="phase-nav">
+          </a>
+          <a href="#phase4" class="phase-nav phase-4-nav">
             <div class="phase-num">4</div>
             <div class="phase-title">Scale</div>
             <div class="phase-time">Months 6-12</div>
-          </div>
+          </a>
         </div>
 
         <!-- Phase 1 -->
-        <div class="phase-section">
+        <div id="phase1" class="phase-section phase-1">
           <div class="phase-header">
             <div class="phase-number">1</div>
             <div class="phase-info">
@@ -333,7 +374,7 @@
         </div>
 
         <!-- Phase 2 -->
-        <div class="phase-section">
+        <div id="phase2" class="phase-section phase-2">
           <div class="phase-header">
             <div class="phase-number">2</div>
             <div class="phase-info">
@@ -393,7 +434,7 @@
         </div>
 
         <!-- Phase 3 -->
-        <div class="phase-section">
+        <div id="phase3" class="phase-section phase-3">
           <div class="phase-header">
             <div class="phase-number">3</div>
             <div class="phase-info">
@@ -453,7 +494,7 @@
         </div>
 
         <!-- Phase 4 -->
-        <div class="phase-section">
+        <div id="phase4" class="phase-section phase-4">
           <div class="phase-header">
             <div class="phase-number">4</div>
             <div class="phase-info">
