@@ -231,106 +231,6 @@
       flex-wrap: wrap;
     }
     
-    /* 4-Quadrant Priority Matrix */
-    .priority-matrix {
-      position: relative;
-      background: var(--white);
-      border-radius: 12px;
-      padding: 2.5rem 2rem 2rem 2.5rem;
-      border: 1px solid #e5e7eb;
-    }
-    
-    .matrix-y-label {
-      position: absolute;
-      left: -0.5rem;
-      top: 50%;
-      transform: rotate(-90deg) translateX(-50%);
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--gray);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-    }
-    
-    .matrix-x-label {
-      position: absolute;
-      bottom: 0.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--gray);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    
-    .matrix-grid-4 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 1rem;
-      min-height: 500px;
-    }
-    
-    @media (max-width: 768px) {
-      .matrix-grid-4 {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-    }
-    
-    .matrix-quadrant {
-      border-radius: 10px;
-      padding: 1.25rem;
-    }
-    
-    .quadrant-green { background: rgba(58, 140, 110, 0.1); border: 1px solid rgba(58, 140, 110, 0.3); }
-    .quadrant-blue { background: rgba(13, 42, 69, 0.08); border: 1px solid rgba(13, 42, 69, 0.2); }
-    .quadrant-gold { background: rgba(201, 146, 46, 0.1); border: 1px solid rgba(201, 146, 46, 0.3); }
-    .quadrant-red { background: rgba(196, 82, 74, 0.1); border: 1px solid rgba(196, 82, 74, 0.3); }
-    
-    .quadrant-header {
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      margin-bottom: 0.25rem;
-    }
-    
-    .quadrant-green .quadrant-header { color: #3a8c6e; }
-    .quadrant-blue .quadrant-header { color: #0d2a45; }
-    .quadrant-gold .quadrant-header { color: #a67a1a; }
-    .quadrant-red .quadrant-header { color: #c4524a; }
-    
-    .quadrant-subtitle {
-      font-size: 0.75rem;
-      color: var(--gray);
-      margin-bottom: 1rem;
-    }
-    
-    .quadrant-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .quadrant-list li {
-      font-size: 0.9rem;
-      margin-bottom: 0.75rem;
-      line-height: 1.4;
-    }
-    
-    .quadrant-list li strong {
-      color: var(--text-dark);
-    }
-    
-    .quadrant-list li span {
-      font-size: 0.8rem;
-      color: var(--gray);
-    }
-
     /* Slider navigation arrows */
     .slider-nav {
       display: flex;
@@ -682,60 +582,29 @@
         
         <h2 class="text-center">Channel Priority Matrix</h2>
         <p class="text-center text-muted" style="max-width: 700px; margin: 0 auto 2rem;">
-          Where to invest limited resources for maximum impact.
+          Where to invest limited resources for maximum impact. Bubble size indicates relative priority.
         </p>
         
-        <!-- 4-Quadrant Matrix -->
-        <div class="priority-matrix">
-          <!-- Axis Labels -->
-          <div class="matrix-y-label">Higher Impact</div>
-          <div class="matrix-x-label">Higher Effort</div>
-          
-          <!-- Quadrant Grid -->
-          <div class="matrix-grid-4">
-            <!-- Top Left: Quick Wins -->
-            <div class="matrix-quadrant quadrant-green">
-              <div class="quadrant-header">Quick Wins</div>
-              <div class="quadrant-subtitle">Low effort, high impact</div>
-              <ul class="quadrant-list">
-                <li><strong>Referral Program</strong><br><span>89% NPS - high leverage, low cost</span></li>
-                <li><strong>Email / Newsletter</strong><br><span>Primary retention channel</span></li>
-                <li><strong>Instagram</strong><br><span>25K followers - strongest social</span></li>
-                <li><strong>Facebook</strong><br><span>Cross-post from Instagram</span></li>
-              </ul>
+        <div style="background: var(--white); border-radius: 12px; padding: 2rem; border: 1px solid #e5e7eb;">
+          <div style="position: relative;">
+            <canvas id="priorityMatrix" style="max-height: 500px;"></canvas>
+          </div>
+          <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--success);"></div>
+              <span style="font-size: 0.85rem; color: var(--gray);">Quick Win</span>
             </div>
-            
-            <!-- Top Right: Strategic Bets -->
-            <div class="matrix-quadrant quadrant-blue">
-              <div class="quadrant-header">Strategic Bets</div>
-              <div class="quadrant-subtitle">High effort, high impact</div>
-              <ul class="quadrant-list">
-                <li><strong>Website Rebuild</strong><br><span>Highest-impact single project</span></li>
-                <li><strong>Podcasts (Guest)</strong><br><span>46% found via podcast - #1 channel</span></li>
-                <li><strong>YouTube</strong><br><span>Explicitly requested by supporters</span></li>
-                <li><strong>SEO / Blogs</strong><br><span>Organic discovery engine</span></li>
-                <li><strong>Merch Store</strong><br><span>Revenue + word-of-mouth</span></li>
-              </ul>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--primary-blue);"></div>
+              <span style="font-size: 0.85rem; color: var(--gray);">Strategic Bet</span>
             </div>
-            
-            <!-- Bottom Left: Fill Later -->
-            <div class="matrix-quadrant quadrant-gold">
-              <div class="quadrant-header">Fill Later</div>
-              <div class="quadrant-subtitle">Low effort, lower priority</div>
-              <ul class="quadrant-list">
-                <li><strong>Google Ad Grant</strong><br><span>Fix tracking first - $10K/mo free</span></li>
-                <li><strong>LinkedIn</strong><br><span>Useful for credibility + grants only</span></li>
-              </ul>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--warning);"></div>
+              <span style="font-size: 0.85rem; color: var(--gray);">Fill Later</span>
             </div>
-            
-            <!-- Bottom Right: Deprioritize -->
-            <div class="matrix-quadrant quadrant-red">
-              <div class="quadrant-header">Deprioritize</div>
-              <div class="quadrant-subtitle">High effort, low return</div>
-              <ul class="quadrant-list">
-                <li><strong>X / Twitter</strong><br><span>214 followers, 0 posts - commit or kill</span></li>
-                <li><strong>TikTok</strong><br><span>Wrong demographic fit</span></li>
-              </ul>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--danger);"></div>
+              <span style="font-size: 0.85rem; color: var(--gray);">Deprioritize</span>
             </div>
           </div>
         </div>
@@ -746,6 +615,123 @@
 
       </div>
     </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Quadrant background plugin
+      const quadrantPlugin = {
+        id: 'quadrantBackground',
+        beforeDraw: (chart) => {
+          const ctx = chart.ctx;
+          const chartArea = chart.chartArea;
+          const xScale = chart.scales.x;
+          const yScale = chart.scales.y;
+          
+          // Midpoints for quadrants (effort=5, impact=7)
+          const midX = xScale.getPixelForValue(5.5);
+          const midY = yScale.getPixelForValue(7);
+          
+          // Quick Wins (top-left) - green
+          ctx.fillStyle = 'rgba(58, 140, 110, 0.15)';
+          ctx.fillRect(chartArea.left, chartArea.top, midX - chartArea.left, midY - chartArea.top);
+          
+          // Strategic Bets (top-right) - blue
+          ctx.fillStyle = 'rgba(13, 42, 69, 0.1)';
+          ctx.fillRect(midX, chartArea.top, chartArea.right - midX, midY - chartArea.top);
+          
+          // Fill Later (bottom-left) - gold
+          ctx.fillStyle = 'rgba(201, 146, 46, 0.15)';
+          ctx.fillRect(chartArea.left, midY, midX - chartArea.left, chartArea.bottom - midY);
+          
+          // Deprioritize (bottom-right) - red
+          ctx.fillStyle = 'rgba(196, 82, 74, 0.12)';
+          ctx.fillRect(midX, midY, chartArea.right - midX, chartArea.bottom - midY);
+          
+          // Quadrant labels
+          ctx.font = 'bold 11px Barlow, sans-serif';
+          ctx.fillStyle = 'rgba(0,0,0,0.5)';
+          ctx.fillText('QUICK WINS', chartArea.left + 8, chartArea.top + 18);
+          ctx.fillText('STRATEGIC BETS', midX + 8, chartArea.top + 18);
+          ctx.fillText('FILL LATER', chartArea.left + 8, midY + 18);
+          ctx.fillText('DEPRIORITIZE', midX + 8, midY + 18);
+          
+          // Dashed divider lines
+          ctx.setLineDash([6, 4]);
+          ctx.strokeStyle = '#999';
+          ctx.lineWidth = 1.5;
+          
+          // Vertical line
+          ctx.beginPath();
+          ctx.moveTo(midX, chartArea.top);
+          ctx.lineTo(midX, chartArea.bottom);
+          ctx.stroke();
+          
+          // Horizontal line
+          ctx.beginPath();
+          ctx.moveTo(chartArea.left, midY);
+          ctx.lineTo(chartArea.right, midY);
+          ctx.stroke();
+          
+          ctx.setLineDash([]);
+        }
+      };
+      
+      Chart.register(quadrantPlugin);
+      
+      const matrixCtx = document.getElementById('priorityMatrix').getContext('2d');
+      new Chart(matrixCtx, {
+        type: 'bubble',
+        data: {
+          datasets: [
+            // Quick Wins (green)
+            { label: 'Referral Program', data: [{ x: 3.5, y: 9.0, r: 18 }], backgroundColor: 'rgba(58, 140, 110, 0.8)', borderColor: '#3a8c6e', borderWidth: 2 },
+            { label: 'Email/Newsletter', data: [{ x: 3.5, y: 8.0, r: 22 }], backgroundColor: 'rgba(58, 140, 110, 0.8)', borderColor: '#3a8c6e', borderWidth: 2 },
+            { label: 'Instagram', data: [{ x: 5.0, y: 8.5, r: 18 }], backgroundColor: 'rgba(58, 140, 110, 0.8)', borderColor: '#3a8c6e', borderWidth: 2 },
+            { label: 'Facebook', data: [{ x: 4.5, y: 8.3, r: 14 }], backgroundColor: 'rgba(58, 140, 110, 0.8)', borderColor: '#3a8c6e', borderWidth: 2 },
+            // Strategic Bets (navy)
+            { label: 'Website Rebuild', data: [{ x: 8.2, y: 8.8, r: 28 }], backgroundColor: 'rgba(13, 42, 69, 0.8)', borderColor: '#0d2a45', borderWidth: 2 },
+            { label: 'Podcasts (Guest)', data: [{ x: 5.6, y: 9.5, r: 26 }], backgroundColor: 'rgba(13, 42, 69, 0.8)', borderColor: '#0d2a45', borderWidth: 2 },
+            { label: 'YouTube', data: [{ x: 7.0, y: 8.8, r: 22 }], backgroundColor: 'rgba(13, 42, 69, 0.8)', borderColor: '#0d2a45', borderWidth: 2 },
+            { label: 'SEO/Blogs', data: [{ x: 7.0, y: 7.5, r: 16 }], backgroundColor: 'rgba(13, 42, 69, 0.8)', borderColor: '#0d2a45', borderWidth: 2 },
+            { label: 'Merch Store', data: [{ x: 5.8, y: 7.5, r: 18 }], backgroundColor: 'rgba(13, 42, 69, 0.8)', borderColor: '#0d2a45', borderWidth: 2 },
+            // Fill Later (gold)
+            { label: 'Google Ad Grant', data: [{ x: 4.5, y: 6.5, r: 20 }], backgroundColor: 'rgba(201, 146, 46, 0.8)', borderColor: '#c9922e', borderWidth: 2 },
+            { label: 'LinkedIn', data: [{ x: 2.5, y: 4.0, r: 12 }], backgroundColor: 'rgba(201, 146, 46, 0.8)', borderColor: '#c9922e', borderWidth: 2 },
+            // Deprioritize (red)
+            { label: 'TikTok', data: [{ x: 7.5, y: 4.0, r: 12 }], backgroundColor: 'rgba(196, 82, 74, 0.8)', borderColor: '#c4524a', borderWidth: 2 },
+            { label: 'X/Twitter', data: [{ x: 6.5, y: 5.5, r: 10 }], backgroundColor: 'rgba(196, 82, 74, 0.8)', borderColor: '#c4524a', borderWidth: 2 }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: 'Effort Required', color: '#0d2a45', font: { weight: 'bold' } },
+              min: 1,
+              max: 10,
+              grid: { color: 'rgba(0,0,0,0.05)' }
+            },
+            y: {
+              title: { display: true, text: 'Potential Impact', color: '#0d2a45', font: { weight: 'bold' } },
+              min: 1,
+              max: 10,
+              grid: { color: 'rgba(0,0,0,0.05)' }
+            }
+          }
+        }
+      });
+    </script>
 
   </div>
 
