@@ -20,7 +20,7 @@
   /* Status colors - brand-aligned */
   --success: #3b7a8c;    /* teal, complements navy */
   --warning: #c9922e;    /* muted amber, pairs with gold */
-  --danger: #a65d57;     /* muted rust, not jarring */
+  --danger: #c4524a;     /* muted red, still brand-friendly */
 }
 
 /* Reset */
