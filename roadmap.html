@@ -74,21 +74,21 @@
       color: rgba(255,255,255,0.7);
     }
     
-    a.phase-nav {
-      text-decoration: none;
-      color: inherit;
-    }
+    /* Phase nav colors - brand gradient */
+    .phase-1-nav.active { background: #0d2a45; border-color: #0d2a45; }
+    .phase-2-nav.active { background: #1a3d5c; border-color: #1a3d5c; }
+    .phase-3-nav.active { background: #2a5070; border-color: #2a5070; }
+    .phase-4-nav.active { background: #d4a800; border-color: #d4a800; }
     
-    /* Phase nav colors on hover - brand colors */
-    .phase-1-nav:hover { border-color: #0d2a45; }
-    .phase-2-nav:hover { border-color: #1a3d5c; }
-    .phase-3-nav:hover { border-color: #2a5070; }
-    .phase-4-nav:hover { border-color: #d4a800; }
+    .phase-1-nav:hover:not(.active) { border-color: #0d2a45; }
+    .phase-2-nav:hover:not(.active) { border-color: #1a3d5c; }
+    .phase-3-nav:hover:not(.active) { border-color: #2a5070; }
+    .phase-4-nav:hover:not(.active) { border-color: #d4a800; }
     
-    .phase-1-nav:hover .phase-num { background: #0d2a45; }
-    .phase-2-nav:hover .phase-num { background: #1a3d5c; }
-    .phase-3-nav:hover .phase-num { background: #2a5070; }
-    .phase-4-nav:hover .phase-num { background: #d4a800; }
+    .phase-1-nav .phase-num { background: #0d2a45; }
+    .phase-2-nav .phase-num { background: #1a3d5c; }
+    .phase-3-nav .phase-num { background: #2a5070; }
+    .phase-4-nav .phase-num { background: #d4a800; }
     
     /* Connector line between phases */
     .phase-nav:not(:last-child)::after {
@@ -107,15 +107,29 @@
       }
     }
     
+    /* Slider container */
+    .slider-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .slider-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+    
     /* Phase content */
     .phase-section {
       background: var(--white);
       border-radius: 16px;
       padding: 2.5rem;
-      margin-bottom: 2rem;
       border: 1px solid #e5e7eb;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      scroll-margin-top: 100px;
     }
     
     /* Phase number colors - match the nav anchors at top */
@@ -202,51 +216,38 @@
       flex-wrap: wrap;
     }
     
-    /* Channel matrix redesign */
-    .matrix-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+    /* Slider navigation arrows */
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
     }
     
-    @media (max-width: 768px) {
-      .matrix-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    .matrix-card {
+    .slider-arrow {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
       background: var(--white);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
+      border: 2px solid #e5e7eb;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      font-size: 1.25rem;
+      color: var(--primary-blue);
     }
     
-    .matrix-header {
+    .slider-arrow:hover:not(:disabled) {
+      border-color: var(--primary-blue);
       background: var(--primary-blue);
       color: white;
-      padding: 1rem 1.5rem;
-      font-weight: 600;
     }
     
-    .matrix-header.wins {
-      background: var(--success);
-    }
-    
-    .matrix-body {
-      padding: 1rem;
-    }
-    
-    .matrix-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 0.5rem;
-      border-bottom: 1px solid #f3f4f6;
-    }
-    
-    .matrix-item:last-child {
-      border-bottom: none;
+    .slider-arrow:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
     }
   </style>
 </head>
@@ -287,30 +288,35 @@
         
         <!-- Phase Navigation -->
         <div class="roadmap-header">
-          <a href="#phase1" class="phase-nav phase-1-nav">
+          <div class="phase-nav phase-1-nav active" data-phase="0">
             <div class="phase-num">1</div>
             <div class="phase-title">Stop the Bleeding</div>
             <div class="phase-time">Month 1</div>
-          </a>
-          <a href="#phase2" class="phase-nav phase-2-nav">
+          </div>
+          <div class="phase-nav phase-2-nav" data-phase="1">
             <div class="phase-num">2</div>
             <div class="phase-title">Website Rebuild</div>
             <div class="phase-time">Months 2-3</div>
-          </a>
-          <a href="#phase3" class="phase-nav phase-3-nav">
+          </div>
+          <div class="phase-nav phase-3-nav" data-phase="2">
             <div class="phase-num">3</div>
             <div class="phase-title">Growth Channels</div>
             <div class="phase-time">Months 3-6</div>
-          </a>
-          <a href="#phase4" class="phase-nav phase-4-nav">
+          </div>
+          <div class="phase-nav phase-4-nav" data-phase="3">
             <div class="phase-num">4</div>
             <div class="phase-title">Scale</div>
             <div class="phase-time">Months 6-12</div>
-          </a>
+          </div>
         </div>
 
-        <!-- Phase 1 -->
-        <div id="phase1" class="phase-section phase-1">
+        <!-- Slider -->
+        <div class="slider-wrapper">
+          <div class="slider-track">
+            
+            <!-- Phase 1 -->
+            <div class="slider-slide">
+              <div class="phase-section phase-1">
           <div class="phase-header">
             <div class="phase-number">1</div>
             <div class="phase-info">
@@ -360,10 +366,12 @@
               </div>
             </div>
           </div>
-        </div>
+              </div>
+            </div>
 
-        <!-- Phase 2 -->
-        <div id="phase2" class="phase-section phase-2">
+            <!-- Phase 2 -->
+            <div class="slider-slide">
+              <div class="phase-section phase-2">
           <div class="phase-header">
             <div class="phase-number">2</div>
             <div class="phase-info">
@@ -424,10 +432,12 @@
               </div>
             </div>
           </div>
-        </div>
+              </div>
+            </div>
 
-        <!-- Phase 3 -->
-        <div id="phase3" class="phase-section phase-3">
+            <!-- Phase 3 -->
+            <div class="slider-slide">
+              <div class="phase-section phase-3">
           <div class="phase-header">
             <div class="phase-number">3</div>
             <div class="phase-info">
@@ -489,10 +499,12 @@
               </div>
             </div>
           </div>
-        </div>
+              </div>
+            </div>
 
-        <!-- Phase 4 -->
-        <div id="phase4" class="phase-section phase-4">
+            <!-- Phase 4 -->
+            <div class="slider-slide">
+              <div class="phase-section phase-4">
           <div class="phase-header">
             <div class="phase-number">4</div>
             <div class="phase-info">
@@ -535,6 +547,16 @@
               </div>
             </div>
           </div>
+              </div>
+            </div>
+
+          </div><!-- /slider-track -->
+        </div><!-- /slider-wrapper -->
+        
+        <!-- Slider Navigation Arrows -->
+        <div class="slider-nav">
+          <button class="slider-arrow" id="prevSlide" disabled>&#8592;</button>
+          <button class="slider-arrow" id="nextSlide">&#8594;</button>
         </div>
 
       </div>
@@ -712,6 +734,49 @@
     if (sessionStorage.getItem('stronghold_auth') === 'true') {
       document.querySelector('.page-content').classList.add('visible');
     }
+    
+    // Phase Slider
+    (function() {
+      const track = document.querySelector('.slider-track');
+      const navItems = document.querySelectorAll('.phase-nav');
+      const prevBtn = document.getElementById('prevSlide');
+      const nextBtn = document.getElementById('nextSlide');
+      let currentSlide = 0;
+      const totalSlides = 4;
+      
+      function goToSlide(index) {
+        if (index < 0 || index >= totalSlides) return;
+        currentSlide = index;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update nav active states
+        navItems.forEach((nav, i) => {
+          nav.classList.toggle('active', i === currentSlide);
+        });
+        
+        // Update arrow states
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide === totalSlides - 1;
+      }
+      
+      // Click handlers for phase nav
+      navItems.forEach(nav => {
+        nav.addEventListener('click', () => {
+          const phase = parseInt(nav.dataset.phase);
+          goToSlide(phase);
+        });
+      });
+      
+      // Arrow click handlers
+      prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+      nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') goToSlide(currentSlide - 1);
+        if (e.key === 'ArrowRight') goToSlide(currentSlide + 1);
+      });
+    })();
   </script>
 </body>
 </html>
