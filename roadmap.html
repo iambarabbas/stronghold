@@ -231,6 +231,106 @@
       flex-wrap: wrap;
     }
     
+    /* 4-Quadrant Priority Matrix */
+    .priority-matrix {
+      position: relative;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem 2rem 2rem 2.5rem;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .matrix-y-label {
+      position: absolute;
+      left: -0.5rem;
+      top: 50%;
+      transform: rotate(-90deg) translateX(-50%);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    
+    .matrix-x-label {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .matrix-grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1rem;
+      min-height: 500px;
+    }
+    
+    @media (max-width: 768px) {
+      .matrix-grid-4 {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+    }
+    
+    .matrix-quadrant {
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    
+    .quadrant-green { background: rgba(58, 140, 110, 0.1); border: 1px solid rgba(58, 140, 110, 0.3); }
+    .quadrant-blue { background: rgba(13, 42, 69, 0.08); border: 1px solid rgba(13, 42, 69, 0.2); }
+    .quadrant-gold { background: rgba(201, 146, 46, 0.1); border: 1px solid rgba(201, 146, 46, 0.3); }
+    .quadrant-red { background: rgba(196, 82, 74, 0.1); border: 1px solid rgba(196, 82, 74, 0.3); }
+    
+    .quadrant-header {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.25rem;
+    }
+    
+    .quadrant-green .quadrant-header { color: #3a8c6e; }
+    .quadrant-blue .quadrant-header { color: #0d2a45; }
+    .quadrant-gold .quadrant-header { color: #a67a1a; }
+    .quadrant-red .quadrant-header { color: #c4524a; }
+    
+    .quadrant-subtitle {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+    
+    .quadrant-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .quadrant-list li {
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    
+    .quadrant-list li strong {
+      color: var(--text-dark);
+    }
+    
+    .quadrant-list li span {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
     /* Slider navigation arrows */
     .slider-nav {
       display: flex;
@@ -582,27 +682,60 @@
         
         <h2 class="text-center">Channel Priority Matrix</h2>
         <p class="text-center text-muted" style="max-width: 700px; margin: 0 auto 2rem;">
-          Where to invest limited resources for maximum impact. Bubble size indicates relative priority.
+          Where to invest limited resources for maximum impact.
         </p>
         
-        <div style="background: var(--white); border-radius: 12px; padding: 2rem; border: 1px solid #e5e7eb;">
-          <canvas id="priorityMatrix" style="max-height: 450px;"></canvas>
-          <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <div style="width: 14px; height: 14px; border-radius: 50%; background: #10b981;"></div>
-              <span style="font-size: 0.85rem; color: var(--gray);">Quick Win</span>
+        <!-- 4-Quadrant Matrix -->
+        <div class="priority-matrix">
+          <!-- Axis Labels -->
+          <div class="matrix-y-label">Higher Impact</div>
+          <div class="matrix-x-label">Higher Effort</div>
+          
+          <!-- Quadrant Grid -->
+          <div class="matrix-grid-4">
+            <!-- Top Left: Quick Wins -->
+            <div class="matrix-quadrant quadrant-green">
+              <div class="quadrant-header">Quick Wins</div>
+              <div class="quadrant-subtitle">Low effort, high impact</div>
+              <ul class="quadrant-list">
+                <li><strong>Referral Program</strong><br><span>89% NPS - high leverage, low cost</span></li>
+                <li><strong>Email / Newsletter</strong><br><span>Primary retention channel</span></li>
+                <li><strong>Instagram</strong><br><span>25K followers - strongest social</span></li>
+                <li><strong>Facebook</strong><br><span>Cross-post from Instagram</span></li>
+              </ul>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <div style="width: 14px; height: 14px; border-radius: 50%; background: #0d2a45;"></div>
-              <span style="font-size: 0.85rem; color: var(--gray);">Strategic Bet</span>
+            
+            <!-- Top Right: Strategic Bets -->
+            <div class="matrix-quadrant quadrant-blue">
+              <div class="quadrant-header">Strategic Bets</div>
+              <div class="quadrant-subtitle">High effort, high impact</div>
+              <ul class="quadrant-list">
+                <li><strong>Website Rebuild</strong><br><span>Highest-impact single project</span></li>
+                <li><strong>Podcasts (Guest)</strong><br><span>46% found via podcast - #1 channel</span></li>
+                <li><strong>YouTube</strong><br><span>Explicitly requested by supporters</span></li>
+                <li><strong>SEO / Blogs</strong><br><span>Organic discovery engine</span></li>
+                <li><strong>Merch Store</strong><br><span>Revenue + word-of-mouth</span></li>
+              </ul>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <div style="width: 14px; height: 14px; border-radius: 50%; background: #f59e0b;"></div>
-              <span style="font-size: 0.85rem; color: var(--gray);">Fill Later</span>
+            
+            <!-- Bottom Left: Fill Later -->
+            <div class="matrix-quadrant quadrant-gold">
+              <div class="quadrant-header">Fill Later</div>
+              <div class="quadrant-subtitle">Low effort, lower priority</div>
+              <ul class="quadrant-list">
+                <li><strong>Google Ad Grant</strong><br><span>Fix tracking first - $10K/mo free</span></li>
+                <li><strong>LinkedIn</strong><br><span>Useful for credibility + grants only</span></li>
+              </ul>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <div style="width: 14px; height: 14px; border-radius: 50%; background: #ef4444;"></div>
-              <span style="font-size: 0.85rem; color: var(--gray);">Deprioritize</span>
+            
+            <!-- Bottom Right: Deprioritize -->
+            <div class="matrix-quadrant quadrant-red">
+              <div class="quadrant-header">Deprioritize</div>
+              <div class="quadrant-subtitle">High effort, low return</div>
+              <ul class="quadrant-list">
+                <li><strong>X / Twitter</strong><br><span>214 followers, 0 posts - commit or kill</span></li>
+                <li><strong>TikTok</strong><br><span>Wrong demographic fit</span></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -613,128 +746,6 @@
 
       </div>
     </section>
-    
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-      // Channel Priority Matrix Bubble Chart
-      const matrixCtx = document.getElementById('priorityMatrix').getContext('2d');
-      new Chart(matrixCtx, {
-        type: 'bubble',
-        data: {
-          datasets: [
-            // Quick Wins (green) - low effort, high impact
-            {
-              label: 'Referral Program',
-              data: [{ x: 3.5, y: 9.0, r: 18 }],
-              backgroundColor: 'rgba(16, 185, 129, 0.7)',
-              borderColor: '#10b981'
-            },
-            {
-              label: 'Email/Newsletter',
-              data: [{ x: 3.5, y: 8.0, r: 22 }],
-              backgroundColor: 'rgba(16, 185, 129, 0.7)',
-              borderColor: '#10b981'
-            },
-            {
-              label: 'Instagram',
-              data: [{ x: 5.0, y: 8.5, r: 18 }],
-              backgroundColor: 'rgba(16, 185, 129, 0.7)',
-              borderColor: '#10b981'
-            },
-            {
-              label: 'Facebook',
-              data: [{ x: 4.5, y: 8.3, r: 14 }],
-              backgroundColor: 'rgba(16, 185, 129, 0.7)',
-              borderColor: '#10b981'
-            },
-            // Strategic Bets (navy) - higher effort, high impact
-            {
-              label: 'Website Rebuild',
-              data: [{ x: 8.2, y: 8.8, r: 28 }],
-              backgroundColor: 'rgba(13, 42, 69, 0.7)',
-              borderColor: '#0d2a45'
-            },
-            {
-              label: 'Podcasts (Guest)',
-              data: [{ x: 5.1, y: 9.5, r: 26 }],
-              backgroundColor: 'rgba(13, 42, 69, 0.7)',
-              borderColor: '#0d2a45'
-            },
-            {
-              label: 'YouTube',
-              data: [{ x: 7.0, y: 8.8, r: 22 }],
-              backgroundColor: 'rgba(13, 42, 69, 0.7)',
-              borderColor: '#0d2a45'
-            },
-            {
-              label: 'SEO/Blogs',
-              data: [{ x: 7.0, y: 8.0, r: 16 }],
-              backgroundColor: 'rgba(13, 42, 69, 0.7)',
-              borderColor: '#0d2a45'
-            },
-            {
-              label: 'Merch Store',
-              data: [{ x: 5.7, y: 7.5, r: 18 }],
-              backgroundColor: 'rgba(13, 42, 69, 0.7)',
-              borderColor: '#0d2a45'
-            },
-            // Fill Later (amber)
-            {
-              label: 'Google Ad Grant',
-              data: [{ x: 6.0, y: 6.8, r: 20 }],
-              backgroundColor: 'rgba(245, 158, 11, 0.7)',
-              borderColor: '#f59e0b'
-            },
-            {
-              label: 'LinkedIn',
-              data: [{ x: 4.5, y: 5.5, r: 10 }],
-              backgroundColor: 'rgba(245, 158, 11, 0.7)',
-              borderColor: '#f59e0b'
-            },
-            // Deprioritize (red)
-            {
-              label: 'TikTok',
-              data: [{ x: 7.5, y: 4.0, r: 12 }],
-              backgroundColor: 'rgba(239, 68, 68, 0.7)',
-              borderColor: '#ef4444'
-            },
-            {
-              label: 'X/Twitter',
-              data: [{ x: 6.0, y: 3.5, r: 8 }],
-              backgroundColor: 'rgba(239, 68, 68, 0.7)',
-              borderColor: '#ef4444'
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              callbacks: {
-                label: function(context) {
-                  return context.dataset.label;
-                }
-              }
-            }
-          },
-          scales: {
-            x: {
-              title: { display: true, text: 'Effort Required', color: '#0d2a45', font: { weight: 'bold' } },
-              min: 2,
-              max: 10,
-              grid: { color: '#e5e7eb' }
-            },
-            y: {
-              title: { display: true, text: 'Potential Impact', color: '#0d2a45', font: { weight: 'bold' } },
-              min: 2,
-              max: 10,
-              grid: { color: '#e5e7eb' }
-            }
-          }
-        }
-      });
-    </script>
 
   </div>
 
