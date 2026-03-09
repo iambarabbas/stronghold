@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Roadmap | Stronghold Discovery</title>
+  <link rel="icon" type="image/webp" href="assets/logo.webp">
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* Roadmap-specific styles */
@@ -466,9 +467,9 @@
           </div>
           
           <div class="action-grid">
-            <div class="action-card">
+            <div class="action-card" style="border: 2px solid var(--gold);">
               <h4>Google Ad Grants</h4>
-              <p>$10,000/month in free search ads for nonprofits. Requires conversion tracking to be fixed first. Captures high-intent searches.</p>
+              <p><strong>$10,000/month in free search ads</strong> for nonprofits. Most organizations don't know this exists. Stronghold likely already qualifies. Requires conversion tracking to be fixed first.</p>
               <div class="action-meta">
                 <span class="badge badge-success">$120K/Year Free Media</span>
               </div>
@@ -496,7 +497,7 @@
             </div>
             <div class="action-card">
               <h4>Referral Program</h4>
-              <p>89% of supporters would recommend Stronghold. Give them a structured way to refer. "Cover Your 6" postcard packs.</p>
+              <p><strong>89%</strong> of supporters would recommend Stronghold. Give them a structured way to refer. "Cover Your 6" postcard packs.</p>
               <div class="action-meta">
                 <span class="badge badge-success">Word of Mouth</span>
               </div>
@@ -556,7 +557,7 @@
             </div>
             <div class="action-card">
               <h4>Major Donor Cultivation</h4>
-              <p>One-time donors give 11x more per transaction. Build a separate funnel for major donation prospects. Personal cultivation.</p>
+              <p>One-time donors give 9.6x more per transaction. Build a separate funnel for major donation prospects. Personal cultivation.</p>
               <div class="action-meta">
                 <span class="badge badge-success">Revenue Diversification</span>
               </div>
@@ -697,6 +698,42 @@
             { label: 'LinkedIn', data: [{ x: 2.5, y: 2.0, r: 10 }], backgroundColor: 'rgba(201, 146, 46, 0.8)', borderColor: '#c9922e', borderWidth: 2 }
           ]
         },
+        plugins: [{
+          id: 'bubbleLabels',
+          afterDatasetsDraw: (chart) => {
+            const ctx = chart.ctx;
+            ctx.font = 'bold 10px Barlow, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            chart.data.datasets.forEach((dataset, i) => {
+              const meta = chart.getDatasetMeta(i);
+              if (meta.hidden) return;
+              
+              meta.data.forEach((element, index) => {
+                const label = dataset.label;
+                const x = element.x;
+                const y = element.y;
+                const r = element.options.radius;
+                
+                // Position label below bubble for larger bubbles, inside for smaller
+                const labelY = r > 15 ? y : y + r + 10;
+                
+                // Dark text on light bubbles, white on dark
+                ctx.fillStyle = dataset.backgroundColor.includes('13, 42, 69') ? '#fff' : '#0d2a45';
+                
+                // Draw text (wrap long labels)
+                const words = label.split(' ');
+                if (words.length > 1 && r > 12) {
+                  ctx.fillText(words[0], x, r > 15 ? y - 5 : labelY - 5);
+                  ctx.fillText(words.slice(1).join(' '), x, r > 15 ? y + 7 : labelY + 7);
+                } else {
+                  ctx.fillText(label, x, r > 15 ? y : labelY);
+                }
+              });
+            });
+          }
+        }],
         options: {
           responsive: true,
           maintainAspectRatio: true,

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What's Broken | Stronghold Discovery</title>
+  <link rel="icon" type="image/webp" href="assets/logo.webp">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
@@ -59,14 +60,14 @@
         
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-value danger">17.7%</div>
+            <div class="stat-value danger"><strong>17.7%</strong></div>
             <div class="stat-label">Total Decline</div>
-            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">April 2024 to January 2026</p>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Apr 2024 - Jan 2026</p>
           </div>
           <div class="stat-card">
             <div class="stat-value danger">1,482</div>
             <div class="stat-label">Net Monthly Donations Lost</div>
-            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Over 22 months</p>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">22 months (Apr 2024 - Jan 2026)</p>
           </div>
           <div class="stat-card">
             <div class="stat-value warning">8,385 to 6,903</div>
@@ -95,7 +96,7 @@
         
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-value danger">$258K</div>
+            <div class="stat-value danger"><strong>$258K</strong></div>
             <div class="stat-label">Lost to Failed Payments</div>
             <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">April 2024 - December 2025</p>
           </div>
@@ -131,7 +132,7 @@
         
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-value danger">191</div>
+            <div class="stat-value danger"><strong>191</strong></div>
             <div class="stat-label">Monthly Organic Visits</div>
             <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Comparable orgs: 1,000-5,000+</p>
           </div>
@@ -182,20 +183,20 @@
       <div class="container">
         
         <h2>Revenue Concentration Risk</h2>
-        <p>99.5% of revenue comes from recurring monthly donations. This is an extraordinary concentration that creates structural fragility.</p>
+        <p>90.1% of revenue comes from recurring monthly donations. This is an extraordinary concentration that creates structural fragility.</p>
         
         <div class="grid-2">
           <div>
             <div class="stats-grid">
               <div class="stat-card">
-                <div class="stat-value warning">99.5%</div>
+                <div class="stat-value warning">90.1%</div>
                 <div class="stat-label">Revenue from Recurring</div>
                 <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Healthy range: 60-70%</p>
               </div>
               <div class="stat-card">
-                <div class="stat-value danger">816</div>
+                <div class="stat-value danger">4,844</div>
                 <div class="stat-label">One-Time Donations (All Year)</div>
-                <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">0.49% of total volume</p>
+                <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">2.3% of total volume</p>
               </div>
             </div>
             <div class="highlight-box danger">
@@ -204,15 +205,15 @@
           </div>
           <div class="card">
             <h3 class="text-gold">The One-Time Opportunity</h3>
-            <p>One-time donors give <strong>11x more per transaction</strong> than recurring donors:</p>
+            <p>One-time donors give <strong>9.6x more per transaction</strong> than recurring donors:</p>
             <table class="data-table">
               <tr>
                 <td>One-Time Average Donation</td>
-                <td style="text-align: right;"><strong>$264.72</strong></td>
+                <td style="text-align: right;"><strong>$213.25</strong></td>
               </tr>
               <tr>
                 <td>Monthly Average Donation</td>
-                <td style="text-align: right;">$23.42</td>
+                <td style="text-align: right;">$22.16</td>
               </tr>
             </table>
             <p class="mb-0">The organization needs to develop one-time and major donor channels as structural hedges, not just revenue growth strategies.</p>
@@ -236,8 +237,8 @@
           </div>
           <div class="stat-card">
             <div class="stat-value danger">0</div>
-            <div class="stat-label">One-Time Tracking</div>
-            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">Never fired in GA4</p>
+            <div class="stat-label">One-Time Event Tracking</div>
+            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">FundraiseUp events not visible in GA4</p>
           </div>
           <div class="stat-card">
             <div class="stat-value warning">No Data</div>
@@ -262,6 +263,9 @@
               <li>No cohort retention analysis</li>
               <li>50-70% of donation activity invisible</li>
             </ul>
+            <div style="background: #fef3c7; padding: 0.75rem; border-radius: 4px; margin-top: 1rem;">
+              <p style="margin: 0; font-size: 0.9rem; color: var(--text-dark);"><strong>Form Abandonment:</strong> We do not have form abandonment data. The FundraiseUp donation modal is not tagged within GA4, which means we cannot track how many visitors open the form, begin filling it out, or at what point they leave. Fixing GA4 form tracking is a prerequisite for any meaningful conversion optimization work.</p>
+            </div>
           </div>
           <div class="card">
             <h3 class="text-gold">What GA4 Could Tell Us</h3>
@@ -290,7 +294,7 @@
         </div>
         
         <div class="text-center mt-4">
-          <a href="roadmap.html" class="btn btn-primary">See the Roadmap</a>
+          <a href="insights.html" class="btn btn-primary">See Key Insights</a>
         </div>
 
       </div>
@@ -310,29 +314,54 @@
       document.querySelector('.page-content').classList.add('visible');
     }
     
-    // Churn line chart
+    // Churn line chart with projection
     const churnCtx = document.getElementById('churnChart').getContext('2d');
     new Chart(churnCtx, {
       type: 'line',
       data: {
-        labels: ['Apr 24', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan 25', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan 26'],
+        labels: ['Apr 24', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan 25', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan 26', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul 26'],
         datasets: [{
           label: 'Monthly Donations',
-          data: [8385, 8200, 8050, 7900, 7800, 7650, 7500, 7400, 7300, 7200, 7150, 7100, 7050, 7000, 6980, 6950, 6920, 6910, 6905, 6900, 6905, 6903],
+          data: [8385, 8200, 8050, 7900, 7800, 7650, 7500, 7400, 7300, 7200, 7150, 7100, 7050, 7000, 6980, 6950, 6920, 6910, 6905, 6900, 6905, 6903, null, null, null, null, null, null],
           borderColor: '#ef4444',
           backgroundColor: 'rgba(239, 68, 68, 0.1)',
           fill: true,
           tension: 0.3
+        }, {
+          label: 'Projected (if no action taken)',
+          data: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 6903, 6825, 6747, 6669, 6591, 6513, 6435],
+          borderColor: '#ffc300',
+          backgroundColor: 'transparent',
+          borderDash: [5, 5],
+          tension: 0.3,
+          pointStyle: 'circle',
+          pointRadius: 3
         }]
       },
       options: {
         responsive: true,
         plugins: {
-          legend: { display: false },
-          title: { display: true, text: 'Monthly Donation Volume (22 Months)', color: '#0d2a45' }
+          legend: { 
+            display: true,
+            position: 'bottom',
+            labels: { color: '#0d2a45' }
+          },
+          title: { display: true, text: 'Monthly Donation Volume with 6-Month Projection', color: '#0d2a45' },
+          annotation: {
+            annotations: {
+              label1: {
+                type: 'label',
+                xValue: 'Jul 26',
+                yValue: 6435,
+                content: ['~6,435'],
+                color: '#ffc300',
+                font: { size: 11 }
+              }
+            }
+          }
         },
         scales: {
-          y: { beginAtZero: false, min: 6500, max: 8500 }
+          y: { beginAtZero: false, min: 6000, max: 8500 }
         }
       }
     });
